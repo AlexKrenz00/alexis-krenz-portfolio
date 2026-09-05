@@ -76,15 +76,15 @@
 @media(max-width:600px){
   .mobileNav>div a{display:flex!important;align-items:center;justify-content:space-between}
   .mobileNav>div a:not(.whatsappLink){color:#111827}
-  .heroV2{gap:16px;padding-top:34px;padding-bottom:28px}
+  .heroV2{gap:16px;padding-top:34px;padding-bottom:8px}
   .heroV2 h1{font-size:clamp(48px,13vw,54px)}
   .heroShowcase{height:420px;margin-top:-12px}
-  .realShowcase{height:400px;margin-top:-12px}
+  .realShowcase{height:380px;margin-top:-12px}
   .projectBrowser{top:8px;height:250px}
   .projectViewport{height:201px}
   .projectSwitcher{top:245px;bottom:auto}
 
-  .workV2{padding:72px 0}
+  .workV2{padding:28px 0 72px}
   .projectsIntro{margin-bottom:32px}
   .projectImage,.medicalProject .projectImage{height:285px}
   .projectDetails,.medicalProject .projectDetails{min-height:auto;padding:24px}
