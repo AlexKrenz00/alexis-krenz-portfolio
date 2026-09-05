@@ -71,3 +71,46 @@
 .serviceCard footer b{display:inline-flex;align-items:center;gap:8px;color:#ddff55;font-size:8px}.serviceCard footer .whatsappButtonIcon{width:15px;height:15px}.servicesBottom>span b{display:block;margin-top:5px;color:#d7dce5;font-size:10px}
 .faqV2{padding:115px 0}.faqIntro{display:grid;grid-template-columns:1.15fr .85fr;column-gap:70px;margin-bottom:55px}.faqIntro>span{grid-column:1/-1;margin-bottom:20px;color:#6c59dc;font:800 10px monospace;letter-spacing:.15em}.faqIntro h2{font-size:clamp(42px,5vw,64px);line-height:.98}.faqIntro h2 em{font:500 1em var(--serif);color:#6c59dc}.faqIntro p{align-self:end;margin:0;color:#69717f;font-size:14px;line-height:1.75}.faqList{border-top:1px solid #cfcbc2}.faqList details{border-bottom:1px solid #cfcbc2}.faqList summary{min-height:82px;padding:20px 4px;display:grid;grid-template-columns:55px 1fr 40px;align-items:center;cursor:pointer;list-style:none;font-size:18px;font-weight:800}.faqList summary::-webkit-details-marker{display:none}.faqList summary span{color:#6c59dc;font:800 9px monospace}.faqList summary b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#fff;font-size:18px;transition:transform .25s ease,background .25s ease}.faqList details[open] summary b{transform:rotate(45deg);background:#ddff55}.faqList details p{max-width:760px;margin:-5px 40px 28px 59px;color:#646d79;font-size:13px;line-height:1.75}
 @media(max-width:850px){.desktopNav{display:none!important}.mobileNav{display:block;position:relative}.mobileNav summary{width:42px;height:42px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;border-radius:50%;background:#111827;cursor:pointer;list-style:none}.mobileNav summary::-webkit-details-marker{display:none}.mobileNav summary span{width:17px;height:1px;background:#fff}.mobileNav>div{position:absolute;right:0;top:51px;width:min(290px,calc(100vw - 28px));padding:12px;display:flex;flex-direction:column;align-items:stretch;gap:0;background:#fff;border:1px solid #e1ded7;box-shadow:0 20px 45px #11182724}.mobileNav>div a{padding:15px;border-bottom:1px solid #ebe8e2;font-size:12px}.mobileNav>div .whatsappLink{margin-top:8px;justify-content:center;background:#111827;color:#fff;border:0}.mobileNav .whatsappButtonIcon{color:#ddff55}.proofV2>.shell{grid-template-columns:1fr 1fr}.proofV2 .shell>div,.proofV2 .shell>div:first-child{padding:23px 13px;border-bottom:1px solid #e4e1da}.proofV2 .shell>div:nth-child(2){border-right:0}.proofV2 .shell>div:nth-child(3),.proofV2 .shell>div:nth-child(4){border-bottom:0}.faqV2{padding:85px 0}.faqIntro{grid-template-columns:1fr;gap:23px;margin-bottom:38px}.faqIntro>span{grid-column:auto;margin-bottom:0}.faqList summary{grid-template-columns:34px 1fr 34px;font-size:15px}.faqList details p{margin:-3px 34px 25px 34px}}
+
+/* Final mobile polish after real-device review */
+@media(max-width:600px){
+  .heroV2{gap:24px;padding-top:34px;padding-bottom:58px}
+  .heroV2 h1{font-size:clamp(48px,13vw,54px)}
+  .heroShowcase{height:420px;margin-top:-12px}
+  .realShowcase{height:420px;margin-top:-12px}
+  .projectBrowser{top:24px;height:310px}
+  .projectViewport{height:261px}
+  .projectSwitcher{bottom:4px}
+
+  .workV2{padding:72px 0}
+  .projectsIntro{margin-bottom:32px}
+  .projectImage,.medicalProject .projectImage{height:285px}
+  .projectDetails,.medicalProject .projectDetails{min-height:auto;padding:24px}
+  .projectDetails h3,.medicalProject .projectDetails h3{font-size:31px}
+
+  .proofV2 .shell>div{gap:9px}
+  .proofV2 strong{font-size:25px;white-space:nowrap}
+  .proofV2 span{font-size:8px}
+
+  .servicesV2{padding:74px 0 54px}
+  .serviceCard{min-height:315px;padding:26px}
+
+  .processV2{padding:76px 0 42px}
+  .processTrack article{min-height:auto;padding:24px}
+  .processNumber{margin-bottom:28px}
+  .processTrack article p{margin-bottom:30px}
+  .processPromise{display:grid;grid-template-columns:28px 1fr;gap:13px 8px;padding:20px 0}
+  .processPromise span,.processPromise p{display:block;margin:0}
+
+  .faqV2{padding:76px 0 58px}
+  .faqList summary{min-height:74px}
+
+  .contactV2{gap:32px;margin-top:26px;margin-bottom:54px;padding:38px 30px}
+  .contactCopy h2{font-size:46px}
+  .contactV2 aside{padding:25px 20px}
+  .contactV2 a.contactWhatsapp,.contactV2 a.contactMail{width:100%;margin-top:14px;display:flex;align-items:center;justify-content:space-between}
+  .contactV2 a.contactWhatsapp{background:#ddff55}
+  .contactV2 a.contactMail{padding:17px 18px;background:#f4f2ed;color:#111827;border:0}
+  .contactV2 .contactWhatsapp .whatsappButtonIcon,.contactV2 .contactMail .mailIcon{margin:0}
+  .bottom{padding:28px 0 34px}
+}
