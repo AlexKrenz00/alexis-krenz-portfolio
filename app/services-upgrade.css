@@ -74,6 +74,8 @@
 
 /* Final mobile polish after real-device review */
 @media(max-width:600px){
+  .mobileNav>div a{display:flex!important;align-items:center;justify-content:space-between}
+  .mobileNav>div a:not(.whatsappLink){color:#111827}
   .heroV2{gap:24px;padding-top:34px;padding-bottom:58px}
   .heroV2 h1{font-size:clamp(48px,13vw,54px)}
   .heroShowcase{height:420px;margin-top:-12px}
