@@ -1,10 +1,23 @@
+"use client";
+
+import {useEffect,useRef} from "react";
 import ProjectShowcase from "./ProjectShowcase";
 
 const wa="https://wa.me/541151078475?text=Hola%20Alexis%2C%20quiero%20consultarte%20por%20una%20p%C3%A1gina%20web";
 const waFor=(service:string)=>`https://wa.me/541151078475?text=${encodeURIComponent(`Hola Alexis, vi tu portafolio y quiero consultar por ${service}.`)}`;
 const WhatsAppIcon=()=> <svg className="whatsappButtonIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2a9.84 9.84 0 0 0-8.5 14.78L2 22l5.35-1.49A9.93 9.93 0 1 0 12.04 2Zm0 17.98a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.18.88.85-3.1-.2-.32a8.07 8.07 0 1 1 6.96 3.85Zm4.43-6.05c-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.44-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.41.08-.16.04-.3-.02-.42-.06-.12-.54-1.31-.75-1.79-.2-.47-.4-.4-.55-.41h-.47c-.16 0-.42.06-.65.3-.22.24-.85.83-.85 2.03 0 1.19.87 2.35.99 2.51.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28Z"/></svg>;
-export default function Home(){return <main>
- <nav className="shell navV2"><a className="logo" href="#"><b>AK</b><span>Alexis Krenz<small>Diseño & desarrollo web</small></span></a><div className="desktopNav"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#preguntas">Preguntas</a><a className="pill whatsappLink" href={wa}>Iniciar proyecto <WhatsAppIcon/></a></div><details className="mobileNav"><summary aria-label="Abrir menú"><span/><span/><span/></summary><div><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#preguntas">Preguntas frecuentes</a><a className="whatsappLink" href={wa}>Iniciar proyecto <WhatsAppIcon/></a></div></details></nav>
+export default function Home(){
+ const mobileNavRef=useRef<HTMLDetailsElement>(null);
+ useEffect(()=>{
+  const closeMenu=(event:PointerEvent)=>{const menu=mobileNavRef.current;if(menu?.open&&!menu.contains(event.target as Node))menu.open=false};
+  const closeWithKeyboard=(event:KeyboardEvent)=>{if(event.key==="Escape"&&mobileNavRef.current?.open){mobileNavRef.current.open=false;mobileNavRef.current.querySelector("summary")?.focus()}};
+  document.addEventListener("pointerdown",closeMenu);
+  document.addEventListener("keydown",closeWithKeyboard);
+  return()=>{document.removeEventListener("pointerdown",closeMenu);document.removeEventListener("keydown",closeWithKeyboard)};
+ },[]);
+ const closeMobileNav=()=>{if(mobileNavRef.current)mobileNavRef.current.open=false};
+ return <main>
+ <nav className="shell navV2"><a className="logo" href="#"><b>AK</b><span>Alexis Krenz<small>Diseño & desarrollo web</small></span></a><div className="desktopNav"><a href="#proyectos">Proyectos</a><a href="#servicios">Servicios</a><a href="#preguntas">Preguntas</a><a className="pill whatsappLink" href={wa}>Iniciar proyecto <WhatsAppIcon/></a></div><details className="mobileNav" ref={mobileNavRef}><summary aria-label="Abrir menú"><span/><span/><span/></summary><div><a href="#proyectos" onClick={closeMobileNav}>Proyectos</a><a href="#servicios" onClick={closeMobileNav}>Servicios</a><a href="#preguntas" onClick={closeMobileNav}>Preguntas frecuentes</a><a className="whatsappLink" href={wa} onClick={closeMobileNav}>Iniciar proyecto <WhatsAppIcon/></a></div></details></nav>
  <header className="shell heroV2"><section className="heroMessage"><span className="available"><i/> DISPONIBLE PARA NUEVOS PROYECTOS</span><h1>Tu idea merece<br/>una web que se<br/><em>sienta única.</em></h1><p>Diseño y desarrollo experiencias digitales que llaman la atención, cuentan tu historia y hacen que contactarte sea fácil.</p><div className="buttons"><a className="primary whatsappLink" href={wa}>Contame tu idea <WhatsAppIcon/></a><a className="workLink" href="#proyectos">Explorar proyectos <span>↓</span></a></div><div className="heroProof"><span>Diseño personalizado</span><span>Adaptado a celulares</span><span>Contacto directo</span></div></section>
  <ProjectShowcase />
  </header>

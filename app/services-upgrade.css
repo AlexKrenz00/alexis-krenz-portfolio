@@ -116,3 +116,6 @@
   .contactV2 .contactWhatsapp .whatsappButtonIcon,.contactV2 .contactMail .mailIcon{margin:0}
   .bottom{padding:28px 0 34px}
 }
+
+/* Keep decorative elements from widening the page at browser zoom levels. */
+html,body,main{width:100%;max-width:100%;overflow-x:clip}
