@@ -171,3 +171,12 @@ html,body,main{width:100%;max-width:100%;overflow-x:clip}
  .deliverablesGrid article:last-child{border-bottom:0!important}
  .deliverablesGrid h3{margin-top:32px}
 }
+
+/* Preserve the full Thompson interface instead of cropping it */
+.medicalProject .projectImage{padding:24px;background:#eef3f6}
+.medicalProject .projectImage img{object-fit:contain;object-position:center;transform:none}
+.medicalProject:hover .projectImage img{transform:scale(1.01)}
+.projectViewport>img{padding:10px;object-fit:contain;background:#eef3f6}
+.stackLabel{display:block;margin-top:28px;color:#7d8490;font-size:8px;font-weight:900;letter-spacing:.14em}
+.stackLabel+.techStack{margin-top:12px}
+@media(max-width:600px){.medicalProject .projectImage{padding:12px}}
